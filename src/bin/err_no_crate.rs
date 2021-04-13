@@ -6,7 +6,7 @@ enum MyError {
 }
 
 impl fmt::Display for MyError {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             MyError::Io(cause) => write!(f, "I/O Error: {}", cause),
             MyError::Num(cause) => write!(f, "Parse Error: {}", cause),
